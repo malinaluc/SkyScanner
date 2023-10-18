@@ -108,7 +108,7 @@ public class EchoServer extends AbstractServer
 	  client.setInfo("isFirstMessage", true);
   }
   synchronized protected void clientDisconnected(ConnectionToClient client) {
-	  System.out.println("Client : " + client + " has disconnected.");
+	  System.out.println("Client : " + client.getInfo("loginID") + " has disconnected.");
   }
   synchronized protected void clientException(ConnectionToClient client, Throwable exception) {
 	  clientDisconnected(client);
@@ -122,7 +122,10 @@ public class EchoServer extends AbstractServer
     super(port);
     this.serverUI = serverUI;
   }
-  
+
+
+  /// :)
+
   public void handleMessageFromServerUI(String message){
 	  if(message.charAt(0) == '#'){
 			try{
