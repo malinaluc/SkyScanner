@@ -1,6 +1,8 @@
 Proiect Ingineria Sistemelor - Flight Booking App
 Lucăcel Mălina
 
+
+
 Acest proiect va consta intr-o mini aplicatie pentru cautarea si achizitionarea biletelor de avion.
 Proiectul va avea un pannel principal din cadrul caruia se vor putea accesa diferite pannel-uri secundare.
 La deschiderea proiectului va aparea o fereastra de log in. In proiect vor exista 2 tipuri de user : manager(mapat cu 0) si client(mapat cu 1). Maparile vor avea loc in campul “role” din tabela user.
@@ -39,5 +41,6 @@ Lista functionalitati:
 -	Generare boarding pass la finalul rezervarii
 
 
-
-
+!!! 
+Actualizari ulterioare :
+- am modificat tabela "flight" -> in loc de DateTime pentru arrival si departure time, am spart in Date date si Integer hour 
