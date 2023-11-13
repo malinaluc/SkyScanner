@@ -1,9 +1,10 @@
 package com.example.TestProiectBackEnd.model;
-
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Date;
@@ -13,10 +14,12 @@ import java.sql.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table
+@ToString
 public class Flight {
 
     //!!nu denumim campurile cu _
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idfligt;
     //fk
     private Long originAirportId;
@@ -38,9 +41,7 @@ public class Flight {
 
 
 
-
     @OneToOne
     private Seat seat;
-
 
 }

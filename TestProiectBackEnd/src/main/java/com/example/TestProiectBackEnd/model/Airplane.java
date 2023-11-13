@@ -1,8 +1,6 @@
 package com.example.TestProiectBackEnd.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Table
 public class Airplane {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idairplane;
     private String type;
     private Integer businessCapacity;

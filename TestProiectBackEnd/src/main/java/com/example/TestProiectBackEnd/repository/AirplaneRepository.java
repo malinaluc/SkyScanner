@@ -1,11 +1,13 @@
 package com.example.TestProiectBackEnd.repository;
 
-import com.example.TestProiectBackEnd.model.Seat;
+import com.example.TestProiectBackEnd.model.Airplane;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SeatRepsoitory extends CrudRepository<Seat, Long>  { //tip + tip(pk)
-    ///all CRUD database methods
+public interface AirplaneRepository extends CrudRepository<Airplane,Long> {
+
+    Airplane findFirstByIdairplane(Long id);
+
 
 }

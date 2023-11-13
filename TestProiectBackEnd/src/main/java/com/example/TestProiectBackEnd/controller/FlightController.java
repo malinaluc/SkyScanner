@@ -17,12 +17,10 @@ import java.util.List;
 ///@CrossOrigin(allow = ....) ///doar de la aplicatia asta poate primi request
 public class FlightController {
 
-    @Autowired
     private FlightRepository flightRepository;
 
-    @GetMapping
+    @GetMapping("/GetAllFlights")
     public List<Flight> getAllFlights(){
-      ///  return flightRepository.findAll();
         return (List<Flight>) flightRepository.findAll();
     }
 
@@ -41,6 +39,7 @@ public class FlightController {
     @PostMapping("/AddFlight")
     public Flight createFlight(@RequestBody Flight flight)
     {
+
         return flightRepository.save(flight);
     }
 

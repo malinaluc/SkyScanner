@@ -1,11 +1,11 @@
 package com.example.TestProiectBackEnd.repository;
 
-import com.example.TestProiectBackEnd.model.Seat;
+import com.example.TestProiectBackEnd.model.Airport;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SeatRepsoitory extends CrudRepository<Seat, Long>  { //tip + tip(pk)
-    ///all CRUD database methods
+public interface AirportRepository extends CrudRepository<Airport,Long> {
 
+    Airport findFirstByIdairport(Long id);
 }
