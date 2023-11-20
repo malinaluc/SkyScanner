@@ -1,20 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
+
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
-import Checkbox from '@mui/material/Checkbox';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-import Badge from '@mui/material/Badge';
+import { router } from './components/Router/router';
 
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-
-function App()  {
-  return <div>
-    <Checkbox {...label} />
-
-    <Badge badgeContent={4} color="primary">
-    </Badge>
-  </div>
+export const App = (): JSX.Element => {
+  return <RouterProvider router={router} />
 }
 
 export default App;
