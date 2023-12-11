@@ -1,18 +1,20 @@
 import { RouteObject, createBrowserRouter } from "react-router-dom";
 import { Login } from "../../Pages/Login";
+import Root from "../Root";
+import { FirstPage } from "../../Pages/FirstPage";
 
 const routes: RouteObject[] = [
     {
         path: "/",
-        element: <div>First Page</div>
-    },
-    {
-        path: "/Home",
-        element: <div>Prima componenta</div>
+        element: <Root/>
     },
     {
         path: "/Login",
-        element: <Login />
+        element: <Login/>
+    },
+    {
+        path: "/FirstPage",
+        element: <FirstPage />
     }
 
 ];
