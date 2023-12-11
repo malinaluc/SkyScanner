@@ -1,6 +1,6 @@
 
 export const pageStyle : React.CSSProperties ={
-  background : 'linear-gradient(to bottom, #56A4F6, #96C8FD)',
+  background : 'linear-gradient(to bottom, #2F639A, #96C8FD)',
   //backgroundImage : 'url("C:\Users\clipa\OneDrive\Desktop\faculta\an3\sem1\is\frontend\public\img\airplaneBackground.jpg")',
   backgroundSize : 'cover',
   MozOsxFontSmoothing: "grayscale",
@@ -17,8 +17,8 @@ export const pageStyle : React.CSSProperties ={
 export const parentDivStyle: React.CSSProperties = {
   position: "relative",
   margin: "auto",
-  top: "50%",  // Centrare pe verticală
-  transform: "translateY(-50%)",  // Centrare pe verticală
+  top: "50%",  
+  transform: "translateY(-50%)",  
   color: 'black'
 }
 

@@ -1,7 +1,7 @@
 
 
 export const pageStyle : React.CSSProperties ={
-    background : "#F794E3",
+    background : 'linear-gradient(to bottom, #56A4F6, #96C8FD)',
     MozOsxFontSmoothing: "grayscale",
     WebkitTextSizeAdjust: "100%",
     minHeight: "80rem",
@@ -11,8 +11,42 @@ export const pageStyle : React.CSSProperties ={
     justifyContent: "center",
   }
   
-  export const firstPageButtonStyle: React.CSSProperties ={
-    position: "relative",
-    left:75,
-    top:30
+export const fromTextField : React.CSSProperties = {
+  position: "absolute",
+  margin: "auto",
+  top: "25%", 
+  left : "0%",
+  width: "15%",
+  transform: "translateY(-50%)",  
+  color: 'black'
+}
+
+export const toTextField : React.CSSProperties = {
+  position: "absolute",
+  margin: "auto",
+  top: "25%", 
+  left : "15%",
+  width: "15%",
+  transform: "translateY(-50%)",  
+  color: 'black'
+}
+
+export const departTextField : React.CSSProperties = {
+  position: "absolute",
+  margin: "auto",
+  top: "25%", 
+  left : "30%",
+  width: "15%",
+  transform: "translateY(-50%)",  
+  color: 'black'
+}
+
+export const returnTextField : React.CSSProperties = {
+  position: "absolute",
+  margin: "auto",
+  top: "25%", 
+  left : "45%",
+  width: "15%",
+  transform: "translateY(-50%)",  
+  color: 'black'
 }

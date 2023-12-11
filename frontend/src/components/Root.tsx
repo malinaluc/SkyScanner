@@ -6,7 +6,7 @@ const Root = (): JSX.Element => {
     return(
         <>
         <Login/>
-        <FirstPage/>
+    
         </>
     );
 };
