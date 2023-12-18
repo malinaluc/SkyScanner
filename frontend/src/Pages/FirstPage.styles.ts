@@ -1,7 +1,8 @@
 
 
 export const pageStyle : React.CSSProperties ={
-    background : 'linear-gradient(to bottom, #56A4F6, #96C8FD)',
+    background : 'linear-gradient(to bottom, #2F639A, #96C8FD)',
+    backgroundSize : 'cover',
     MozOsxFontSmoothing: "grayscale",
     WebkitTextSizeAdjust: "100%",
     minHeight: "80rem",
@@ -49,4 +50,31 @@ export const returnTextField : React.CSSProperties = {
   width: "15%",
   transform: "translateY(-50%)",  
   color: 'black'
+}
+
+export const numberOfTravellersTextField : React.CSSProperties = {
+  position: "absolute",
+  margin: "auto",
+  top: "25%", 
+  left : "60%",
+  width: "15%",
+  transform: "translateY(-50%)",  
+  color: 'black'
+}
+
+export const cabinClassTextField : React.CSSProperties = {
+  position: "absolute",
+  margin: "auto",
+  top: "25%", 
+  left : "75%",
+  width: "15%",
+  transform: "translateY(-50%)",  
+  color: 'black'
+}
+
+export const searchButtonStyle: React.CSSProperties = {
+  position: "absolute",
+  left : "95%",  
+  top: "23.5%",
+  color: 'white'
 }

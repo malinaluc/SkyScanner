@@ -17,8 +17,8 @@ export const pageStyle : React.CSSProperties ={
 export const parentDivStyle: React.CSSProperties = {
   position: "relative",
   margin: "auto",
-  top: "50%",  
-  transform: "translateY(-50%)",  
+  top: "20%",  
+  transform: "translateY(-20%)",  
   color: 'black'
 }
 

@@ -5,6 +5,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FaUser, FaLock } from 'react-icons/fa';
 import directFlight from "../img/directFlight.png";
+import airplaneBackground from "../img/airplaneBackground.jpg"
+import airplaneWallpaper from "../img/airplaneWallpaper1.webp"
 
 export const Login = (): JSX.Element => {
     const [email, setEmail] = React.useState<string>("");
@@ -27,6 +29,8 @@ export const Login = (): JSX.Element => {
 
     return (
         <div style ={pageStyle}>
+
+ 
        
         <Typography variant="h4" style={{position : "relative", margin : "auto", textAlign: 'center', top: "20%", fontWeight: 'bold',color :'white' }}>
             WELCOME TO SKY SCANNER
@@ -37,8 +41,7 @@ export const Login = (): JSX.Element => {
         
         <div style={parentDivStyle}>
         
-        <div >
-            
+        <div > 
             <TextField id="userName-textField" label="Username" variant="outlined" size = "small"   onChange={onChangeEmail} />
             <FaUser style={{ marginLeft: '-250px', position: 'absolute', top: '10px', color: 'black' }} />
         </div>
