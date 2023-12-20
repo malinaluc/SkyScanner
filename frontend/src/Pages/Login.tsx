@@ -1,5 +1,5 @@
 import { Button, TextField, Typography } from "@mui/material";
-import { loginButtonStyle, pageStyle, parentDivStyle, skyScannerTextFieldStyle } from "./Login.styles";
+import { loginButtonStyle, pageStyle, parentDivStyle, skyScannerTextFieldStyle, signUpButtonStyle } from "./Login.styles";
 import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,7 @@ import { FaUser, FaLock } from 'react-icons/fa';
 import directFlight from "../img/directFlight.png";
 import airplaneBackground from "../img/airplaneBackground.jpg"
 import airplaneWallpaper from "../img/airplaneWallpaper1.webp"
+import airplane from "../img/airplane.gif";
 
 export const Login = (): JSX.Element => {
     const [email, setEmail] = React.useState<string>("");
@@ -37,7 +38,7 @@ export const Login = (): JSX.Element => {
         </Typography>
 
         
-        <img src={directFlight } style={{ maxWidth: '100%',height :"auto" }}/>
+        <img src={airplane } style={{ maxWidth: '10%',height :"auto" }}/>
         
         <div style={parentDivStyle}>
         
@@ -50,6 +51,7 @@ export const Login = (): JSX.Element => {
             <FaLock style={{ marginLeft: '-250px', position: 'absolute', top: '70px', color: 'black' }} />
         </div>
         <Button style={loginButtonStyle} onClick={login} variant="outlined" >Login</Button>
+        <Button style={signUpButtonStyle} variant = "outlined">Sign Up</Button>
     </div>
     </div>
     

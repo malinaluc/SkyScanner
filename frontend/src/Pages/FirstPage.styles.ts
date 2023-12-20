@@ -15,7 +15,7 @@ export const pageStyle : React.CSSProperties ={
 export const fromTextField : React.CSSProperties = {
   position: "absolute",
   margin: "auto",
-  top: "25%", 
+  top: "30%", 
   left : "0%",
   width: "15%",
   transform: "translateY(-50%)",  
@@ -25,7 +25,7 @@ export const fromTextField : React.CSSProperties = {
 export const toTextField : React.CSSProperties = {
   position: "absolute",
   margin: "auto",
-  top: "25%", 
+  top: "30%", 
   left : "15%",
   width: "15%",
   transform: "translateY(-50%)",  
@@ -35,7 +35,7 @@ export const toTextField : React.CSSProperties = {
 export const departTextField : React.CSSProperties = {
   position: "absolute",
   margin: "auto",
-  top: "25%", 
+  top: "30%", 
   left : "30%",
   width: "15%",
   transform: "translateY(-50%)",  
@@ -45,7 +45,7 @@ export const departTextField : React.CSSProperties = {
 export const returnTextField : React.CSSProperties = {
   position: "absolute",
   margin: "auto",
-  top: "25%", 
+  top: "30%", 
   left : "45%",
   width: "15%",
   transform: "translateY(-50%)",  
@@ -55,7 +55,7 @@ export const returnTextField : React.CSSProperties = {
 export const numberOfTravellersTextField : React.CSSProperties = {
   position: "absolute",
   margin: "auto",
-  top: "25%", 
+  top: "30%", 
   left : "60%",
   width: "15%",
   transform: "translateY(-50%)",  
@@ -65,7 +65,7 @@ export const numberOfTravellersTextField : React.CSSProperties = {
 export const cabinClassTextField : React.CSSProperties = {
   position: "absolute",
   margin: "auto",
-  top: "25%", 
+  top: "30%", 
   left : "75%",
   width: "15%",
   transform: "translateY(-50%)",  
@@ -74,7 +74,7 @@ export const cabinClassTextField : React.CSSProperties = {
 
 export const searchButtonStyle: React.CSSProperties = {
   position: "absolute",
-  left : "95%",  
-  top: "23.5%",
+  left : "92%",  
+  top: "28.5%",
   color: 'white'
 }

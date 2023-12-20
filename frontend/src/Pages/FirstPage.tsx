@@ -9,6 +9,9 @@ import milano from "../img/milano.jpg";
 import dubai from "../img/dubai.jpg";
 import airplane from "../img/airplane.png"
 import traveller from "../img/traveller.png"
+import zakynthos from "../img/zakynthos.jpg"
+
+
 import { useNavigate } from "react-router-dom";
 
 export const FirstPage = (): JSX.Element =>{
@@ -43,7 +46,7 @@ export const FirstPage = (): JSX.Element =>{
      <img src={dubai} style={{ margin: 'auto', width: '15%' }} alt="Dubai" />
      <img src={madrid} style={{ margin: 'auto', width: '15%' }} alt="Madrid" />
      <img src={milano} style={{ margin: 'auto', width: '15%' }} alt="Milano" />
-     <img src={amsterdam} style={{ margin: 'auto', width: '15%' }} alt="Amsterdam" />
+     <img src={zakynthos} style={{ margin: 'auto', width: '15%' }} alt="Zakynthos" />
      </div>
 
      </div>

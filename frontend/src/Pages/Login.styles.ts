@@ -1,7 +1,7 @@
+import React from "react"
 
 export const pageStyle : React.CSSProperties ={
   background : 'linear-gradient(to bottom, #2F639A, #96C8FD)',
-  //backgroundImage : 'url("C:\Users\clipa\OneDrive\Desktop\faculta\an3\sem1\is\frontend\public\img\airplaneBackground.jpg")',
   backgroundSize : 'cover',
   MozOsxFontSmoothing: "grayscale",
   WebkitTextSizeAdjust: "100%",
@@ -17,16 +17,23 @@ export const pageStyle : React.CSSProperties ={
 export const parentDivStyle: React.CSSProperties = {
   position: "relative",
   margin: "auto",
-  top: "20%",  
+  top: "0%",  
   transform: "translateY(-20%)",  
   color: 'black'
 }
 
 export const loginButtonStyle: React.CSSProperties = {
   position: "relative",
-  left : 75,  
+  left : 0,  
   top: 30,
   color: 'black'
+}
+
+export const signUpButtonStyle : React.CSSProperties = {
+  position : "relative",
+  left : 50,
+  top : 30,
+  color : 'black'
 }
 
 export const skyScannerTextFieldStyle : React.CSSProperties = {
