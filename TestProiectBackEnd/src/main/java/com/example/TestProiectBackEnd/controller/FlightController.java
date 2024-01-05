@@ -17,6 +17,7 @@ import java.util.List;
 ///@CrossOrigin(allow = ....) ///doar de la aplicatia asta poate primi request
 public class FlightController {
 
+    @Autowired
     private FlightRepository flightRepository;
 
     @GetMapping("/GetAllFlights")

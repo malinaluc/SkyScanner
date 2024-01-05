@@ -1,7 +1,7 @@
 import React from "react"
 
 export const pageStyle : React.CSSProperties ={
-  background : 'linear-gradient(to bottom, #2F639A, #96C8FD)',
+  background : 'linear-gradient(to bottom, #E7F7FE, #A2E7FF)',
   backgroundSize : 'cover',
   MozOsxFontSmoothing: "grayscale",
   WebkitTextSizeAdjust: "100%",

@@ -22,8 +22,8 @@ public class TestProiectBackEndApplication implements CommandLineRunner {
 		///Seat seat = new Seat(1L); ///L ->face variabila de tip long
 	}
 
-	@Autowired
-	private FlightRepository flightRepository;
+	//@Autowired
+	//private FlightRepository flightRepository;
 
 
 	///@Override
