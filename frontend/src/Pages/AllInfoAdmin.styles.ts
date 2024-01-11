@@ -24,3 +24,12 @@ export const pageStyle : React.CSSProperties ={
     left: '10%',
     color: 'white'
   }
+
+  export const showUsersContainerStyle: React.CSSProperties = {
+    marginTop: '70px'
+  };
+
+  export const showFlightsContainerStyle: React.CSSProperties = {
+    marginTop: '70px'
+  };
+
