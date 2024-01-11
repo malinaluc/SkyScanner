@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { pageStyle, logOutButtonStyle } from "./ResultsPage.styles";
 import React from "react";
+import axios from "axios";
+
 import { Box, Button, Container, CssBaseline, Typography } from "@mui/material";
 
 import flightTickets from "../img/flightTickets.png";
@@ -19,9 +21,9 @@ export const ResultsPage = (): JSX.Element =>{
         <React.Fragment>
       <CssBaseline />
       <Container fixed>
-        <Box sx={{ bgcolor: '#A4E0FA', height: '100vh' }}  >
+        <Box sx={{ bgcolor: '#FCD8F2', height: '100vh' }}  >
         <img src={planeTickets} style={{ marginTop : '0px', maxWidth : "15%", left : "20%"}}  />
-        <Typography variant="h6" style={{ left : "50%", color: '#0071A2' , marginTop : '20px', fontWeight: 'bold' }}>
+        <Typography variant="h6" style={{ left : "50%", color: '#F207B2' , marginTop : '20px', fontWeight: 'bold' }}>
          Results of your search 
        </Typography>
        </Box>

@@ -10,9 +10,17 @@ export const pageStyle : React.CSSProperties ={
     justifyContent: "center",
   }
 
-  export const logOutButtonStyle : React.CSSProperties = {
-    position: "fixed",
-    top: "10px",
-    right: "30px",
-    color: '0071A2'
+
+  export const seeAllFlightsButtonStyle : React.CSSProperties = {
+    position: "relative",
+    top: '20px', 
+    left: '-20%',
+    color: 'white'
+  }
+
+  export const seeAllUsersButtonStyle : React.CSSProperties = {
+    position: "relative",
+    top: '20px', 
+    left: '10%',
+    color: 'white'
   }

@@ -3,6 +3,8 @@ import { Login } from "../../Pages/Login";
 import Root from "../Root";
 import { FirstPage } from "../../Pages/FirstPage";
 import { ResultsPage } from "../../Pages/ResultsPage";
+import { AllInfoAdmin } from "../../Pages/AllInfoAdmin";
+import { SignUp } from "../../Pages/SignUp";
 
 const routes: RouteObject[] = [
     {
@@ -20,6 +22,14 @@ const routes: RouteObject[] = [
     {
         path : "/ResultsPage",
         element : <ResultsPage/>
+    },
+    {
+        path : "/AllInfoAdmin",
+        element : <AllInfoAdmin/>
+    },
+    {
+        path : "/SignUp",
+        element : <SignUp/>
     }
 
 ];

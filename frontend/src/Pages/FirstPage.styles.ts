@@ -1,7 +1,7 @@
 
 
 export const pageStyle : React.CSSProperties ={
-    background : 'linear-gradient(to bottom, #E7F7FE, #A2E7FF)',
+    background : 'linear-gradient(to bottom, #FCCFF0, #F207B2)',
     backgroundSize : 'cover',
     MozOsxFontSmoothing: "grayscale",
     WebkitTextSizeAdjust: "100%",
@@ -84,4 +84,26 @@ export const logOutButtonStyle : React.CSSProperties = {
   top: "10px",
   right: "30px",
   color: '#0071A2'
+}
+
+export const fromSelect : React.CSSProperties = {
+  position: "absolute",
+  margin: "auto",
+  top: "30%", 
+  left : "0%",
+  width: "15%",
+  transform: "translateY(-50%)",  
+  color: 'white'
+}
+
+export const toSelect : React.CSSProperties = {
+  position: "absolute",
+  margin: "auto",
+  top: "30%", 
+  left : "15%",
+  width: "15%",
+  transform: "translateY(-50%)",  
+  color: 'white',
+  
+
 }
