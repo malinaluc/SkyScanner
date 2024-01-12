@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Table
 public class Airport {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idairport;
     private String name;
     private String city;
@@ -20,12 +20,12 @@ public class Airport {
 
     private Long countryId;
 
-    public void setIdairport(Long idairport) {
-        this.idairport = idairport;
-    }
-
     @Id
     public Long getIdairport() {
         return idairport;
+    }
+
+    public void setIdairport(Long idairport) {
+        this.idairport = idairport;
     }
 }

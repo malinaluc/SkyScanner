@@ -3,7 +3,7 @@ import axios from "axios";
 
 import { Button, Table, TableBody, TableCell, TableHead, TableRow, TextField, Typography } from "@mui/material";
 import { loginButtonStyle, pageStyle, parentDivStyle, skyScannerTextFieldStyle, signUpButtonStyle } from "./Login.styles";
-import { seeAllFlightsButtonStyle, seeAllUsersButtonStyle, showFlightsContainerStyle, showUsersContainerStyle } from "./AllInfoAdmin.styles";
+import { createFlightButtonStyle, createUserButtonStyle, seeAllFlightsButtonStyle, seeAllUsersButtonStyle, showFlightsContainerStyle, showUsersContainerStyle } from "./AllInfoAdmin.styles";
 
 
 type User = {
@@ -25,17 +25,15 @@ type Flight = {
     arrivalHour : number;
 };
 
-
-
 export const AllInfoAdmin = (): JSX.Element => {
 
     const [users, setUsers] = useState<User[]>([]);
 
     const [flights, setFlights] = useState<Flight[]>([]);
 
-    const [showUsersContainer, setShowUsersContainer] = useState(true);
+    const [showUsersContainer, setShowUsersContainer] = useState(false);
 
-    const[showFlightsContainer, setShowFlightsContainer] = useState(true);
+    const[showFlightsContainer, setShowFlightsContainer] = useState(false);
 
 
     useEffect(() => {
@@ -73,6 +71,14 @@ export const AllInfoAdmin = (): JSX.Element => {
         setShowFlightsContainer(true);
     }
 
+    const createFlight = (event : any) : void =>{
+
+    }
+
+    const createUser = (event : any) : void =>{
+        
+    }
+
     const typographyStyleUser: React.CSSProperties = {
         color: 'white',
         marginTop: showUsersContainer ? '70px' : '0', 
@@ -93,6 +99,9 @@ export const AllInfoAdmin = (): JSX.Element => {
 
         <Button style = {seeAllFlightsButtonStyle} onClick ={showFlights} variant = "outlined" >See All Flights</Button>
         <Button style = {seeAllUsersButtonStyle} onClick ={showUsers} variant = "outlined">See All Users</Button>
+        <Button style = {createUserButtonStyle} onClick = {createUser} variant = "outlined">Create User</Button>
+        <Button style = {createFlightButtonStyle} onClick = {createFlight} variant = "outlined">Create Flight</Button>
+        
         </div>
 
         {showUsersContainer && (
@@ -150,14 +159,9 @@ export const AllInfoAdmin = (): JSX.Element => {
           </Table>
 
         </div>   
-
     )
-
-
     }
-
     </div>
-
     );
 
 }

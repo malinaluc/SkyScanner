@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 
 public class Booking {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idbooking;
     //fk
     private Long flightId;
@@ -22,12 +22,12 @@ public class Booking {
     //fk
     private Long seatId;
 
-    public void setIdbooking(Long idbooking) {
-        this.idbooking = idbooking;
-    }
-
     @Id
     public Long getIdbooking() {
         return idbooking;
+    }
+
+    public void setIdbooking(Long idbooking) {
+        this.idbooking = idbooking;
     }
 }

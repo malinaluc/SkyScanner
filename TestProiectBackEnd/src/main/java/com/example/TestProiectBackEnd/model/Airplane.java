@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Table
 public class Airplane {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idairplane;
     private String type;
     private Integer businessCapacity;
@@ -20,12 +20,12 @@ public class Airplane {
     private Integer economyCapacity;
     private Integer economySold;
 
-    public void setIdairplane(Long idairplane) {
-        this.idairplane = idairplane;
-    }
-
     @Id
     public Long getIdairplane() {
         return idairplane;
+    }
+
+    public void setIdairplane(Long idairplane) {
+        this.idairplane = idairplane;
     }
 }

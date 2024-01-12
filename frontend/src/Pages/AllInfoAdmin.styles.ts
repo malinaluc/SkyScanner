@@ -25,6 +25,20 @@ export const pageStyle : React.CSSProperties ={
     color: 'white'
   }
 
+  export const createUserButtonStyle : React.CSSProperties = {
+    position: "relative",
+    top: '20px', 
+    left: '40%',
+    color: 'white'
+  }
+
+  export const createFlightButtonStyle : React.CSSProperties ={
+    position: "relative",
+    top: '20px', 
+    left: '70%',
+    color: 'white'
+  }
+
   export const showUsersContainerStyle: React.CSSProperties = {
     marginTop: '70px'
   };

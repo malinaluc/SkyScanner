@@ -1,11 +1,10 @@
 package com.example.TestProiectBackEnd.model;
-import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Date;
 
@@ -19,7 +18,7 @@ public class Flight {
 
     //!!nu denumim campurile cu _
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idfligt;
     //fk
     private Long originAirportId;
@@ -35,10 +34,6 @@ public class Flight {
     private Integer duration; ///minutes
     //fk
     private Long airplaneId;
-
-
-
-
 
 
     @OneToOne

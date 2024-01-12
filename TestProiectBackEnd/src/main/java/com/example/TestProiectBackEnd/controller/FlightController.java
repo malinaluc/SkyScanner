@@ -1,12 +1,8 @@
 package com.example.TestProiectBackEnd.controller;
 
-import com.example.TestProiectBackEnd.VTO.ObiectNou;
 import com.example.TestProiectBackEnd.model.Flight;
-import com.example.TestProiectBackEnd.model.Seat;
 import com.example.TestProiectBackEnd.repository.FlightRepository;
-import com.example.TestProiectBackEnd.service.SeatServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,7 +17,7 @@ public class FlightController {
     private FlightRepository flightRepository;
 
     @GetMapping("/GetAllFlights")
-    public List<Flight> getAllFlights(){
+    public List<Flight> getAllFlights() {
         return (List<Flight>) flightRepository.findAll();
     }
 
@@ -38,8 +34,7 @@ public class FlightController {
 
     //build create flight REST API
     @PostMapping("/AddFlight")
-    public Flight createFlight(@RequestBody Flight flight)
-    {
+    public Flight createFlight(@RequestBody Flight flight) {
 
         return flightRepository.save(flight);
     }

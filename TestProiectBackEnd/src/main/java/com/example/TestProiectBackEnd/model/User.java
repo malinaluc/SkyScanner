@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long iduser;
     private String name;
     private String surname;
@@ -23,12 +23,12 @@ public class User {
     private Integer budget;
     private Integer role; /// ->manager, client
 
-    public void setIduser(Long iduser) {
-        this.iduser = iduser;
-    }
-
     @Id
     public Long getIduser() {
         return iduser;
+    }
+
+    public void setIduser(Long iduser) {
+        this.iduser = iduser;
     }
 }

@@ -12,16 +12,16 @@ import lombok.NoArgsConstructor;
 @Table
 public class Country {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idcountry;
     private String name;
-
-    public void setIdcountry(Long idcountry) {
-        this.idcountry = idcountry;
-    }
 
     @Id
     public Long getIdcountry() {
         return idcountry;
+    }
+
+    public void setIdcountry(Long idcountry) {
+        this.idcountry = idcountry;
     }
 }
