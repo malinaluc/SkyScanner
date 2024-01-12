@@ -47,11 +47,8 @@ export const CreateForAdminPage = () : JSX.Element => {
     <div style ={pageStyle}>
         <Button style = {logOutButtonStyle} onClick = {logOut} variant = "outlined" > LogOut</Button>
         <div>
-        <Typography variant="h6" style={{position : "relative", margin : "auto", textAlign: 'center', top: "-50%", fontWeight: 'bold',color :'white' }}>
+        <Typography variant="h6" style={{ fontWeight: 'bold', color: 'white', marginTop: '50px',marginLeft :"40%"  }}>
             Let's create a flight or an user
-
-
-
         </Typography>
         
         <Button style = {createUserButtonStyle} onClick = {createUser} variant = "outlined" >Create An User</Button>
@@ -62,12 +59,13 @@ export const CreateForAdminPage = () : JSX.Element => {
 
 
     {createUserContainer && (
-    <div>
-    <img src={newAccount } style={{ maxWidth: '5%',height :"auto", left : "20%" }}/>
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+    <img src={newAccount } style={{ maxWidth: '50%',height :"auto", marginLeft : "20%" }}/>
     
 
-    <Typography variant="h5" style={{ color: 'white' , fontWeight: 'bold' , alignItems : "center"}}>
+    <Typography variant="h5" style={{ color: 'white' , fontWeight: 'bold' , alignItems : "center", marginLeft : "10%"}}>
         Let's create an account ! 
+
     </Typography>
 
     <div style = {containerStyle}>

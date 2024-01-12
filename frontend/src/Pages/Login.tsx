@@ -1,76 +1,59 @@
-import { Button, TextField, Typography } from "@mui/material";
-import { loginButtonStyle, pageStyle, parentDivStyle, skyScannerTextFieldStyle, signUpButtonStyle } from "./Login.styles";
-import React, { useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { FaUser, FaLock } from 'react-icons/fa';
-import directFlight from "../img/directFlight.png";
-import airplaneBackground from "../img/airplaneBackground.jpg"
-import airplaneWallpaper from "../img/airplaneWallpaper1.webp"
+import { Components } from "@mui/material";
+import React from "react";
 
-import airplane from "../img/airplane.gif";
 
-export const Login = (): JSX.Element => {
-    const [email, setEmail] = React.useState<string>("");
-    const [password, setPassword] = React.useState<string>("");
+function App() {
+    const [signIn, toggle] = React.useState(true);
+     return(
+         <Components.Container>
+             <Components.SignUpContainer signinIn={signIn}>
+                 <Components.Form>
+                     <Components.Title>Create Account</Components.Title>
+                     <Components.Input type='text' placeholder='Name' />
+                     <Components.Input type='email' placeholder='Email' />
+                     <Components.Input type='password' placeholder='Password' />
+                     <Components.Button>Sign Up</Components.Button>
+                 </Components.Form>
+             </Components.SignUpContainer>
 
-    useEffect(() => {
-        loadUsers();
-    },[]); //[] -> ca sa ruleze o singura data
+             <Components.SignInContainer signinIn={signIn}>
+                  <Components.Form>
+                      <Components.Title>Sign in</Components.Title>
+                      <Components.Input type='email' placeholder='Email' />
+                      <Components.Input type='password' placeholder='Password' />
+                      <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
+                      <Components.Button>Sigin In</Components.Button>
+                  </Components.Form>
+             </Components.SignInContainer>
 
-    const loadUsers =async () =>{
-        const resultUsers = await axios.get("http://localhost:8080/api/user/GetAllUsers")
-        console.log(resultUsers.data);
-    }
+             <Components.OverlayContainer signinIn={signIn}>
+                 <Components.Overlay signinIn={signIn}>
+
+                 <Components.LeftOverlayPanel signinIn={signIn}>
+                     <Components.Title>Welcome Back!</Components.Title>
+                     <Components.Paragraph>
+                         To keep connected with us please login with your personal info
+                     </Components.Paragraph>
+                     <Components.GhostButton onClick={() => toggle(true)}>
+                         Sign In
+                     </Components.GhostButton>
+                     </Components.LeftOverlayPanel>
+
+                     <Components.RightOverlayPanel signinIn={signIn}>
+                       <Components.Title>Hello, Friend!</Components.Title>
+                       <Components.Paragraph>
+                           Enter Your personal details and start journey with us
+                       </Components.Paragraph>
+                           <Components.GhostButton onClick={() => toggle(false)}>
+                               Sigin Up
+                           </Components.GhostButton> 
+                     </Components.RightOverlayPanel>
  
-    const navigate = useNavigate();
+                 </Components.Overlay>
+             </Components.OverlayContainer>
 
-    const onChangeEmail = (event: any): void => {
-        setEmail(event.target.value)
-    }
-
-    const onChangePassword = (event: any): void => {
-        setPassword(event.target.value)
-    }
-
-    const login = (event: any): void => {
-        const authenticationSuccessful = true;
-        if(authenticationSuccessful){
-        navigate("/AllInfoAdmin")}
-    }
-
-    const signUp = (event : any) : void => {
-        navigate ("/SignUp")
-    }
-
-    return (
-        <div style ={pageStyle}>
-
- 
-       
-        <Typography variant="h4" style={{position : "relative", margin : "auto", textAlign: 'center', top: "20%", fontWeight: 'bold',color :'white' }}>
-            WELCOME TO SKY SCANNER
-        </Typography>
-
-        
-        <img src={airplane } style={{ maxWidth: '10%',height :"auto" }}/>
-        
-        <div style={parentDivStyle}>
-        
-        <div > 
-            <TextField id="userName-textField" label="Username" variant="outlined" size = "small"   onChange={onChangeEmail} />
-            <FaUser style={{ marginLeft: '-250px', position: 'absolute', top: '10px', color: 'black' }} />
-        </div>
-        <div style={{ marginTop: 20 }}>
-            <TextField id="password-textField" label="Password" variant="outlined" type = "password" size = "small" onChange={onChangePassword} />
-            <FaLock style={{ marginLeft: '-250px', position: 'absolute', top: '70px', color: 'black' }} />
-        </div>
-        <Button style={loginButtonStyle} onClick={login} variant="outlined" >Login</Button>
-        
-        <Button style={signUpButtonStyle} onClick={signUp} variant = "outlined">Sign Up</Button>
-    </div>
-    </div>
-    
-   
-    );
+         </Components.Container>
+     )
 }
+
+export default App;
