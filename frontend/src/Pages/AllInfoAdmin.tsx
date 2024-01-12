@@ -3,8 +3,8 @@ import axios from "axios";
 
 import { Button, Table, TableBody, TableCell, TableHead, TableRow, TextField, Typography } from "@mui/material";
 import { loginButtonStyle, pageStyle, parentDivStyle, skyScannerTextFieldStyle, signUpButtonStyle } from "./Login.styles";
-import { createFlightButtonStyle, createUserButtonStyle, seeAllFlightsButtonStyle, seeAllUsersButtonStyle, showFlightsContainerStyle, showUsersContainerStyle } from "./AllInfoAdmin.styles";
-
+import { createUserFlightButtonStyle, deleteUserFlightButtonStyle, logOutButtonStyle, seeAllFlightsButtonStyle, seeAllUsersButtonStyle, showFlightsContainerStyle, showUsersContainerStyle, updateUserFlightButtonStyle } from "./AllInfoAdmin.styles";
+import { useNavigate } from "react-router-dom";
 
 type User = {
     email: string;
@@ -14,6 +14,7 @@ type User = {
     budget: number;
   };
 
+  
 type Flight = {
     idflight :number;
     airline : string;
@@ -23,9 +24,12 @@ type Flight = {
     departureHour : number;
     arrivalDate : Date;
     arrivalHour : number;
+    originAirportId : number;
+    destinationAirportId : number;
 };
 
 export const AllInfoAdmin = (): JSX.Element => {
+    const navigate = useNavigate();
 
     const [users, setUsers] = useState<User[]>([]);
 
@@ -33,8 +37,9 @@ export const AllInfoAdmin = (): JSX.Element => {
 
     const [showUsersContainer, setShowUsersContainer] = useState(false);
 
-    const[showFlightsContainer, setShowFlightsContainer] = useState(false);
+    const [showFlightsContainer, setShowFlightsContainer] = useState(false);
 
+    const numeOrase =['Cluj-Napoca','Bucharest','Antalya','Istanbul','Bologna','Milan','Rome','Naples','Basel','Zurich','Barcelona','Madrid','Malaga','Valencia','Paris Beuvais','Lyon','Nice','Eindhoven','Amsterdam','London','Manchester','Zakynthos','Mykonos','Santorini'];
 
     useEffect(() => {
         loadUsers();
@@ -71,13 +76,20 @@ export const AllInfoAdmin = (): JSX.Element => {
         setShowFlightsContainer(true);
     }
 
-    const createFlight = (event : any) : void =>{
-
+    const createUserFlight = (event : any) : void =>{
+        navigate("/CreateForAdminPage");
     }
 
-    const createUser = (event : any) : void =>{
-        
+    const updateUserFlight = (event : any) : void => {
+      navigate("/UpdateForAdminPage");
     }
+
+    const deleteUserFlight = (event : any) : void => {
+      navigate("/DeleteForAdminPage");
+    }
+    const logOut = (event : any) : void => {
+      navigate("/Login")
+   }
 
     const typographyStyleUser: React.CSSProperties = {
         color: 'white',
@@ -91,17 +103,19 @@ export const AllInfoAdmin = (): JSX.Element => {
 
     return(
         <div style = {pageStyle}>
-
+           <Button style = {logOutButtonStyle} onClick = {logOut} variant = "outlined" > LogOut</Button>
         <div>
         <Typography variant="h6" style={{position : "relative", margin : "auto", textAlign: 'center', top: "-50%", fontWeight: 'bold',color :'white' }}>
-            Select an action, admin
-        </Typography>
+            Select an action, admin! This page is for viewing data.
+            
 
+            
+        </Typography>
         <Button style = {seeAllFlightsButtonStyle} onClick ={showFlights} variant = "outlined" >See All Flights</Button>
         <Button style = {seeAllUsersButtonStyle} onClick ={showUsers} variant = "outlined">See All Users</Button>
-        <Button style = {createUserButtonStyle} onClick = {createUser} variant = "outlined">Create User</Button>
-        <Button style = {createFlightButtonStyle} onClick = {createFlight} variant = "outlined">Create Flight</Button>
-        
+        <Button style = {createUserFlightButtonStyle} onClick = {createUserFlight} variant = "outlined">Create User Or Flight</Button>
+        <Button style = {updateUserFlightButtonStyle} onClick ={updateUserFlight} variant = "outlined">Update User Or Flight</Button>
+        <Button style = {deleteUserFlightButtonStyle} onClick={deleteUserFlight} variant = "outlined" >Delete User Or Flight</Button>
         </div>
 
         {showUsersContainer && (
@@ -140,6 +154,8 @@ export const AllInfoAdmin = (): JSX.Element => {
               <TableRow>
                 <TableCell>Airline</TableCell>
                 <TableCell>Duration</TableCell>
+                <TableCell>Origin Airport</TableCell>
+                <TableCell>Destination Airport</TableCell>
                 <TableCell>Price</TableCell> 
                 <TableCell>Departure Hour</TableCell>
                 <TableCell>Arrival Hour</TableCell>
@@ -149,7 +165,9 @@ export const AllInfoAdmin = (): JSX.Element => {
               {flights.map((flight) => (
                 <TableRow key={flight.idflight}>
                   <TableCell>{flight.airline}</TableCell>
-                  <TableCell>{flight.duration}Hours</TableCell>
+                  <TableCell>{flight.duration}Minutes</TableCell>
+                  <TableCell>{numeOrase[flight.originAirportId]}</TableCell>
+                  <TableCell>{numeOrase[flight.destinationAirportId]}</TableCell>
                   <TableCell>{flight.price}Ron</TableCell>
                   <TableCell>{flight.departureHour}PM</TableCell>
                   <TableCell>{flight.arrivalHour}PM</TableCell>
@@ -163,5 +181,4 @@ export const AllInfoAdmin = (): JSX.Element => {
     }
     </div>
     );
-
 }
