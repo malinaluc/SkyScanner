@@ -3,6 +3,9 @@ package com.example.TestProiectBackEnd.controller;
 
 import com.example.TestProiectBackEnd.model.User;
 import com.example.TestProiectBackEnd.repository.UserRepository;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,16 +19,56 @@ public class UserController {
 
     @Autowired
     private UserRepository userRepository;
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    public boolean findByEmailAndPassword(String email, String password) {
+        Query query = entityManager.createQuery(
+                "SELECT u FROM User u WHERE u.email = :email AND u.password = :password AND u.role = 0",
+                User.class
+        );
+
+        query.setParameter("email", email);
+        query.setParameter("password", password);
+
+        List<User> result = query.getResultList();
+        if (result.size() != 0) return true;
+        return false;
+
+    }
+
+    public boolean findByEmailAndPasswordAdmin(String email, String password) {
+        Query query = entityManager.createQuery(
+                "SELECT u FROM User u WHERE u.email = :email AND u.password = :password AND u.role = 1 ",
+                User.class
+        );
+
+        query.setParameter("email", email);
+        query.setParameter("password", password);
+
+        List<User> result = query.getResultList();
+        if (result.size() != 0) return true;
+        return false;
+
+    }
 
     @GetMapping("/GetAllUsers")
-    public List<User> getAllUsers()
-    {
+    public List<User> getAllUsers() {
         return (List<User>) userRepository.findAll();
     }
 
+    @GetMapping("/login/{email}/{password}")
+    public boolean isAuthenticated(@PathVariable String email, @PathVariable String password) {
+        return findByEmailAndPassword(email, password);
+    }
+
+    @GetMapping("/loginAdmin/{email}/{password}")
+    public boolean isAuthenticatedAdmin(@PathVariable String email, @PathVariable String password) {
+        return findByEmailAndPasswordAdmin(email, password);
+    }
+
     @PostMapping("/AddUser")
-    public User createUser(@RequestBody User user)
-    {
+    public User createUser(@RequestBody User user) {
         return userRepository.save(user);
     }
 
