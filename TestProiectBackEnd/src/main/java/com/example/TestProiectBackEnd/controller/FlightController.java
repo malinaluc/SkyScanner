@@ -4,6 +4,7 @@ import com.example.TestProiectBackEnd.exception.ResourceNotFoundException;
 import com.example.TestProiectBackEnd.model.Flight;
 import com.example.TestProiectBackEnd.repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -61,6 +62,14 @@ public class FlightController {
         flightRepository.save(updateFlight);
 
         return ResponseEntity.ok(updateFlight);
+    }
+
+    @DeleteMapping("/deleteFlight/{id}")
+    public ResponseEntity<HttpStatus> deleteFlight(@PathVariable Long id) {
+        Flight flight = flightRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Flight not exist with id: " + id));
+        flightRepository.delete(flight);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 
