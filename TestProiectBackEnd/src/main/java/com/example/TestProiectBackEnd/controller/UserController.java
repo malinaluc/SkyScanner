@@ -1,12 +1,14 @@
 package com.example.TestProiectBackEnd.controller;
 
 
+import com.example.TestProiectBackEnd.exception.ResourceNotFoundException;
 import com.example.TestProiectBackEnd.model.User;
 import com.example.TestProiectBackEnd.repository.UserRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -70,6 +72,24 @@ public class UserController {
     @PostMapping("/AddUser")
     public User createUser(@RequestBody User user) {
         return userRepository.save(user);
+    }
+
+    ///Response entity -> create the result
+    @PutMapping("/updateUser/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User userDetails) {
+        User updateUser = userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("USer not exist with id: " + id));
+        updateUser.setEmail(userDetails.getEmail());
+        updateUser.setName(userDetails.getName());
+        updateUser.setPassword(userDetails.getPassword());
+        updateUser.setBudget(userDetails.getBudget());
+        updateUser.setSurname(userDetails.getSurname());
+        updateUser.setRole(userDetails.getRole());
+
+        userRepository.save(updateUser);
+
+        return ResponseEntity.ok(updateUser);
+
     }
 
 }
