@@ -13,7 +13,7 @@ export const pageStyle: React.CSSProperties = {
 const textFieldCommonStyle: React.CSSProperties = {
   position: 'absolute',
   marginTop: '20px',
-  left: '30%',
+  left: '10%',
   width: '200%',
   transform: 'translateY(-50%)',
   color: 'black',
@@ -80,13 +80,29 @@ export const seeAllUsersButtonStyle: React.CSSProperties = {
   left: '0%',
 };
 
+
+
 export const createUserButtonStyle: React.CSSProperties = {
   ...actionButtonStyle,
   left: '-20%',
 };
 
+export const createFlightButtonStyle: React.CSSProperties = {
+  ...actionButtonStyle,
+  left: '-40%',
+};
+
+
 export const containerStyle: React.CSSProperties = {
   position: 'relative',
   width: '50%',
   marginTop: '10px',
+};
+
+
+///flight 
+
+export const airlineTextField: React.CSSProperties = {
+  ...textFieldCommonStyle,
+  top: '600%',
 };

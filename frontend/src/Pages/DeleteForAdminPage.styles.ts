@@ -10,3 +10,47 @@ export const pageStyle : React.CSSProperties ={
     justifyContent: "center",
   }
 
+  const textFieldCommonStyle: React.CSSProperties = {
+    position: 'absolute',
+    marginTop: '20px',
+    left: '30%',
+    width: '200%',
+    transform: 'translateY(-50%)',
+    color: 'black',
+  };
+  const actionButtonStyle: React.CSSProperties = {
+    position: 'relative',
+    top: '20px',
+    color: 'white',
+  };
+
+  export const logOutButtonStyle: React.CSSProperties = {
+    position: 'fixed',
+    top: '10px',
+    right: '30px',
+    color: '#0071A2',
+  };
+
+  export const deleteFlightButtonStyle: React.CSSProperties = {
+    ...actionButtonStyle,
+    left: '-60%',
+  };
+
+  export const deleteUserButtonStyle: React.CSSProperties = {
+    ...actionButtonStyle,
+    left: '-10%',
+  };
+  export const seeAllUsersFlightsButtonStyle: React.CSSProperties = {
+    ...actionButtonStyle,
+    left: '0%',
+  };
+
+  export const createUserFlightButtonStyle: React.CSSProperties = {
+    ...actionButtonStyle,
+    left: '20%',
+  };
+
+  export const updateUserFlightButtonStyle: React.CSSProperties = {
+    ...actionButtonStyle,
+    left: '40%',
+  };
