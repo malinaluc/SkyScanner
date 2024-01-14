@@ -150,7 +150,7 @@ export const CreateForAdminPage = (): JSX.Element => {
     }
 
     const createUserRequest = async (event: any): Promise<void> => {
-        const sign = await axios.post("http://localhost:8080/api/user/AddUser", { budget, "role": 0, email, name, password, surname });
+        const sign = await axios.post("http://localhost:8080/api/user/AddUser", { budget, "role": 1, email, name, password, surname });
     }
 
     const createFlightRequest = async (event: any): Promise<void> => {

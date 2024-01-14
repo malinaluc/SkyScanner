@@ -21,7 +21,7 @@ export const UpdateForAdminPage = (): JSX.Element => {
     const [budget, setBudget] = useState('');
 
     //flight
-    const seat_idseat = 0;
+    let seat_idseat = 0;
     const [idfligt, setIDflight] = useState<number>(0);
     const [airline, setAirline] = useState('');
     const [arrivalHour, setArrivalHour] = useState('');
@@ -99,6 +99,7 @@ export const UpdateForAdminPage = (): JSX.Element => {
     //flight
     const onChangeIDFlight = (event: any): void => {
         setIDflight(event.target.value);
+        console.log(idfligt);
     }
     const onChangeAirline = (event: any): void => {
         setAirline(event.target.value);
@@ -150,13 +151,14 @@ export const UpdateForAdminPage = (): JSX.Element => {
         setArrivalDate(event.target.value);
     }
 
+    
     const updateUserRequest = async (event: any): Promise<void> => {
 
         ///!! Pentru ca avem nevoie ca iduser sa fie Long si nu String folosim  backticks ``
         const update = await axios.put(`http://localhost:8080/api/user/updateUser/${iduser}`,
             {
                 budget,
-                "role": 0,
+                "role": 1,
                 email,
                 name,
                 password,
@@ -178,7 +180,7 @@ export const UpdateForAdminPage = (): JSX.Element => {
                 price,
                 airline,
                 gate
-            })
+            });
 
     }
 
@@ -237,7 +239,7 @@ export const UpdateForAdminPage = (): JSX.Element => {
                     <TextField id="gateTextField" label="Gate" variant="outlined" size="small" style={gateTextField} onChange={onChangeGate}></TextField>
                     <TextField id="departureDateTextField" label="Departure Date yyyy-mm-dd" variant="outlined" size="small" style={departureDateTextField} onChange={onChangeDepartureDate}></TextField>
                     <TextField id="arrivalDateTextField" label="Arrival Date yyyy-mm-dd" variant="outlined" size="small" style={arrivalDateTextField} onChange={onChangeArrivalDate}></TextField>
-                    <TextField id = "idTextField" label = "ID" variant = "outlined" size = "small" style = {IDTextField} onChange = {onChangeID}></TextField>
+                    <TextField id = "idTextField" label = "ID" variant = "outlined" size = "small" style = {IDTextField} onChange = {onChangeIDFlight}></TextField>
                     <Button style={updateFlightButtonStyle} onClick={updateFlightRequest} variant="outlined">Update Flight</Button>
 
                     <div style={containerStyle}>

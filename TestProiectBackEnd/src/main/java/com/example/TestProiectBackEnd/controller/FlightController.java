@@ -3,6 +3,9 @@ package com.example.TestProiectBackEnd.controller;
 import com.example.TestProiectBackEnd.exception.ResourceNotFoundException;
 import com.example.TestProiectBackEnd.model.Flight;
 import com.example.TestProiectBackEnd.repository.FlightRepository;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +21,8 @@ public class FlightController {
 
     @Autowired
     private FlightRepository flightRepository;
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @GetMapping("/GetAllFlights")
     public List<Flight> getAllFlights() {
@@ -29,11 +34,6 @@ public class FlightController {
     {
         return "message";
     }
-    /*@PostMapping("/Print")
-    public void printMessage(@RequestBody ObiectNou data){
-        System.out.println(data);
-        data.getId();
-    }*/
 
     //build create flight REST API
     @PostMapping("/AddFlight")
@@ -72,5 +72,15 @@ public class FlightController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    @GetMapping("/GetAllOriginAirports")
+    public List<Integer> findOriginAirports() {
+        Query query = entityManager.createQuery(
+                "SELECT f.originAirportId FROM Flight f",
+                Flight.class
+        );
+
+        List<Integer> result = query.getResultList();
+        return result;
+    }
 
 }

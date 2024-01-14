@@ -27,7 +27,7 @@ public class UserController {
 
     public boolean findByEmailAndPassword(String email, String password) {
         Query query = entityManager.createQuery(
-                "SELECT u FROM User u WHERE u.email = :email AND u.password = :password AND u.role = 0",
+                "SELECT u FROM User u WHERE u.email = :email AND u.password = :password AND u.role = 1",
                 User.class
         );
 
@@ -42,7 +42,7 @@ public class UserController {
 
     public boolean findByEmailAndPasswordAdmin(String email, String password) {
         Query query = entityManager.createQuery(
-                "SELECT u FROM User u WHERE u.email = :email AND u.password = :password AND u.role = 1 ",
+                "SELECT u FROM User u WHERE u.email = :email AND u.password = :password AND u.role = 0 ",
                 User.class
         );
 
