@@ -54,3 +54,50 @@ export const pageStyle : React.CSSProperties ={
     ...actionButtonStyle,
     left: '40%',
   };
+
+  export const showUsersContainerStyle: React.CSSProperties = {
+    marginTop: '70px'
+  };
+
+
+
+  //user
+  
+  export const IDToDeleteTextField: React.CSSProperties = {
+    position: 'absolute',
+    marginTop: '20px',
+    left: '40%',
+    width: '20%',
+    transform: 'translateY(-50%)',
+    color: 'black',
+    top: '80%',
+  };
+
+  export const deleteTheUserButtonStyle : React.CSSProperties = {
+    position: 'relative',
+    top: '20px',
+    color: 'white',
+    left : "40%"
+  }
+
+  ///flight
+  export const showFlightsContainerStyle: React.CSSProperties = {
+    marginTop: '70px'
+  };
+  
+  export const deleteTheFlightButtonStyle : React.CSSProperties = {
+    position: 'relative',
+    top: '22px',
+    color: 'white',
+    left : "40%"
+  };
+
+  export const FlightIDToDeleteTextField: React.CSSProperties = {
+    position: 'absolute',
+    marginTop: '20px',
+    left: '40%',
+    width: '20%',
+    transform: 'translateY(-50%)',
+    color: 'black',
+    top: '75%',
+  };

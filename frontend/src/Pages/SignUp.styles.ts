@@ -75,3 +75,10 @@ export const pageStyle : React.CSSProperties ={
     marginTop: '10px',
   };
 
+  export const logOutButtonStyle : React.CSSProperties = {
+    position: "fixed",
+    top: "10px",
+    right: "30px",
+    color: '#0071A2'
+  }
+  

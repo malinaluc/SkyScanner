@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
 import axios from "axios";
-import { emailTextField, pageStyle, containerStyle, passwordTextField, surnameTextField, nameTextField, budgetTextField, signUpButtonStyle } from "./SignUp.styles";
+import { emailTextField, pageStyle, containerStyle, passwordTextField, surnameTextField, nameTextField, budgetTextField, signUpButtonStyle, logOutButtonStyle } from "./SignUp.styles";
 import { Button, TextField, Typography } from "@mui/material";
 
 import newAccount from "../img/new-account.png";
@@ -20,13 +20,7 @@ export const SignUp = (): JSX.Element => {
 
 
     const signUp = async (event: any): Promise<void> => {
-      const sign = await axios.post("http://localhost:8080/api/user/AddUser",{budget,"role":0,email,name,password,surname}); ///http://localhost:8080/api/user/AddUser
-        /*console.log(email);
-        console.log(password);
-        console.log(name);
-        console.log(surname);
-        console.log(budget);*/
-        navigate("/FirstPage");
+      const sign = await axios.post("http://localhost:8080/api/user/AddUser",{budget,"role":0,email,name,password,surname}); 
     }
 
     const onChangeEmail = (event: any): void => {
@@ -54,11 +48,13 @@ export const SignUp = (): JSX.Element => {
         
     }
 
-
+    const logOut = (event : any) : void => {
+        navigate("/Login")
+     }
     
 
     return <div style={pageStyle}>
-
+        <Button style = {logOutButtonStyle} onClick = {logOut} variant = "outlined" > Back To Login</Button>
         <img src={newAccount} style={{ maxWidth: '5%', height: "auto", left: "20%" }} />
 
 

@@ -36,7 +36,4 @@ public class Flight {
     private Long airplaneId;
 
 
-    @OneToOne
-    private Seat seat;
-
 }
