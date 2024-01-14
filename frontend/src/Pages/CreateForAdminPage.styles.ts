@@ -103,6 +103,114 @@ export const containerStyle: React.CSSProperties = {
 ///flight 
 
 export const airlineTextField: React.CSSProperties = {
-  ...textFieldCommonStyle,
-  top: '600%',
+  position: 'absolute',
+  marginTop: '20px',
+  left: '20%',
+  width: '30%',
+  transform: 'translateY(-50%)',
+  color: 'black',
+  top: '65%',
+};
+
+export const arrivalHourTextField: React.CSSProperties = {
+  position: 'absolute',
+  marginTop: '20px',
+  left: '20%',
+  width: '30%',
+  transform: 'translateY(-50%)',
+  color: 'black',
+  top: '70%',
+};
+export const departurelHourTextField: React.CSSProperties = {
+  position: 'absolute',
+  marginTop: '20px',
+  left: '20%',
+  width: '30%',
+  transform: 'translateY(-50%)',
+  color: 'black',
+  top: '75%',
+};
+export const durationTextField: React.CSSProperties = {
+  position: 'absolute',
+  marginTop: '20px',
+  left: '20%',
+  width: '30%',
+  transform: 'translateY(-50%)',
+  color: 'black',
+  top: '80%',
+};
+export const airplaneTextField: React.CSSProperties = {
+  position: 'absolute',
+  marginTop: '20px',
+  left: '20%',
+  width: '30%',
+  transform: 'translateY(-50%)',
+  color: 'black',
+  top: '85%',
+};
+
+
+
+export const destinationAirportTextField: React.CSSProperties = {
+  position: 'absolute',
+  marginTop: '20px',
+  left: '50%',
+  width: '30%',
+  transform: 'translateY(-50%)',
+  color: 'black',
+  top: '65%',
+};
+
+export const pricenTextField: React.CSSProperties = {
+  position: 'absolute',
+  marginTop: '20px',
+  left: '50%',
+  width: '30%',
+  transform: 'translateY(-50%)',
+  color: 'black',
+  top: '70%',
+};
+export const gateTextField: React.CSSProperties = {
+  position: 'absolute',
+  marginTop: '20px',
+  left: '50%',
+  width: '30%',
+  transform: 'translateY(-50%)',
+  color: 'black',
+  top: '75%',
+};
+export const originAirportTextField: React.CSSProperties = {
+  position: 'absolute',
+  marginTop: '20px',
+  left: '50%',
+  width: '30%',
+  transform: 'translateY(-50%)',
+  color: 'black',
+  top: '80%',
+};
+
+export const departureDateTextField: React.CSSProperties = {
+  position: 'absolute',
+  marginTop: '20px',
+  left: '50%',
+  width: '30%',
+  transform: 'translateY(-50%)',
+  color: 'black',
+  top: '85%',
+};
+export const arrivalDateTextField: React.CSSProperties = {
+  position: 'absolute',
+  marginTop: '20px',
+  left: '35%',
+  width: '30%',
+  transform: 'translateY(-50%)',
+  color: 'black',
+  top: '90%',
+};
+
+export const createOnlyFlightButtonStyle: React.CSSProperties = {
+  position: 'relative',
+  top: '380px',
+  color: 'black',
+  left: '10%',
 };

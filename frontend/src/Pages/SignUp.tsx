@@ -10,6 +10,7 @@ import newAccount from "../img/new-account.png";
 
 export const SignUp = (): JSX.Element => {
 
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -19,12 +20,13 @@ export const SignUp = (): JSX.Element => {
 
 
     const signUp = async (event: any): Promise<void> => {
-      const sign = await axios.post("",{budget,"role":0,email,name,password,surname}); ///http://localhost:8080/api/user/AddUser
+      const sign = await axios.post("http://localhost:8080/api/user/AddUser",{budget,"role":0,email,name,password,surname}); ///http://localhost:8080/api/user/AddUser
         /*console.log(email);
         console.log(password);
         console.log(name);
         console.log(surname);
         console.log(budget);*/
+        navigate("/FirstPage");
     }
 
     const onChangeEmail = (event: any): void => {

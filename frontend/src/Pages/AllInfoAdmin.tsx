@@ -7,6 +7,7 @@ import { createUserFlightButtonStyle, deleteUserFlightButtonStyle, logOutButtonS
 import { useNavigate } from "react-router-dom";
 
 type User = {
+  iduser :number,
     email: string;
     password: string;
     name: string;
@@ -16,7 +17,7 @@ type User = {
 
   
 type Flight = {
-    idflight :number;
+    idfligt :number;
     airline : string;
     duration : number;
     price : number;
@@ -124,6 +125,7 @@ export const AllInfoAdmin = (): JSX.Element => {
           <Table style ={showUsersContainerStyle}>
             <TableHead>
               <TableRow>
+              <TableCell>ID</TableCell>
               <TableCell>Email</TableCell>
                 <TableCell>Password</TableCell>
                 <TableCell>Name</TableCell>
@@ -134,6 +136,7 @@ export const AllInfoAdmin = (): JSX.Element => {
             <TableBody>
               {users.map((user) => (
                 <TableRow key={user.email}>
+                 <TableCell>{user.iduser}</TableCell>
                   <TableCell>{user.email}</TableCell>
                   <TableCell>{user.password}</TableCell>
                   <TableCell>{user.name}</TableCell>
@@ -152,6 +155,7 @@ export const AllInfoAdmin = (): JSX.Element => {
          <Table style ={showFlightsContainerStyle}>
             <TableHead>
               <TableRow>
+              <TableCell>ID</TableCell>
                 <TableCell>Airline</TableCell>
                 <TableCell>Duration</TableCell>
                 <TableCell>Origin Airport</TableCell>
@@ -163,7 +167,8 @@ export const AllInfoAdmin = (): JSX.Element => {
             </TableHead>
             <TableBody>
               {flights.map((flight) => (
-                <TableRow key={flight.idflight}>
+                <TableRow key={flight.idfligt}>
+                  <TableCell>{flight.idfligt}</TableCell>
                   <TableCell>{flight.airline}</TableCell>
                   <TableCell>{flight.duration}Minutes</TableCell>
                   <TableCell>{numeOrase[flight.originAirportId]}</TableCell>
