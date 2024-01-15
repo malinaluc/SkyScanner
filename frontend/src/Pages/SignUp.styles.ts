@@ -1,5 +1,5 @@
 export const pageStyle : React.CSSProperties ={
-    background : 'linear-gradient(to bottom, #FCCFF0, #F207B2)',
+    background : 'linear-gradient(to bottom left, #ff99ff 0%, #990099 97%)',
     backgroundSize : 'cover',
     MozOsxFontSmoothing: "grayscale",
     WebkitTextSizeAdjust: "100%",

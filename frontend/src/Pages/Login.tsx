@@ -41,7 +41,7 @@ export const Login = (): JSX.Element => {
 
     const login = async (event: any): Promise<void> => {
         try {
-            navigate("/FirstPage");
+           /// navigate("/FirstPage");
             const check = await CheckEmailAndPassword(email, password);
             const checkAdmin = await CheckEmailAndPasswordAdmin(email, password);
             if (check) {

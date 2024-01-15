@@ -226,7 +226,7 @@ export const CreateForAdminPage = (): JSX.Element => {
                     <TextField id="priceTextField" label="Price" variant="outlined" size="small" style={pricenTextField} onChange={onChangePrice}></TextField>
                     <TextField id="gateTextField" label="Gate" variant="outlined" size="small" style={gateTextField} onChange={onChangeGate}></TextField>
                     <TextField id="departureDateTextField" label="Departure Date yyyy-mm-dd" variant="outlined" size="small" style={departureDateTextField} onChange={onChangeDepartureDate}></TextField>
-                    <TextField id="arrivalDateTextField" label="Arrival Date yyyy-mm-dd" variant="outlined" size="small" style={arrivalDateTextField} onChange={onChangeArrivalDate}></TextField>
+                    <TextField id="arrivalDateTextField" type ="date"label="Arrival Date yyyy-mm-dd" variant="outlined" size="small" style={arrivalDateTextField} onChange={onChangeArrivalDate}></TextField>
 
                     <Button style={createOnlyFlightButtonStyle} onClick={createFlightRequest} variant="outlined">Create Flight</Button>
 
